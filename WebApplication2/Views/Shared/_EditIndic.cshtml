@@ -1,0 +1,194 @@
+﻿@model WebApplication2.Models.Edit
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit";
+}
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <h1>Formularios</h1>
+            <h4>Modificar Valores</h4>
+            <h1>@ViewData["message"]</h1>
+        </div>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- /.row -->
+                <div class="col-md-12">
+                    <form asp-action="Edit">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Filtro</h3>
+                                <div class="card-tools">
+                                </div>
+                                <!-- /.card-tools -->
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <label asp-for="Week" class="control-label">Semana</label>
+                                            <input asp-for="Week" class="form-control" min="1" max="52" />
+                                            <span asp-validation-for="Week" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Region" class="control-label">Planta</label>
+                                            <select asp-for="Region" class="custom-select rounded-0" id="planta" onchange="actualizarLineas()">
+                                                <option value="Jalisco">DV</option>
+                                                <option value="San Luis Potosí">RSLP</option>
+                                                <option value="Matehuala">RMTH</option>
+                                                <option value="Toluca">RT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*</form>
+                            <form asp-action="Edit">*@
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card-info collapsed-card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Indicadores</h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <!-- /.card-tools -->
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group">
+                                                    <label asp-for="Indicador" class="control-label"></label>
+                                                    <span asp-validation-for="Indicador" class="text-danger"></span>
+                                                    <select asp-for="Indicador" class="custom-select rounded-0">
+                                                        <option selected="">--Seleccione un indicador--</option>
+                                                        <option value="Accidentes">Accidentes</option>
+                                                        <option value="Bajas PT">Bajas PT</option>
+                                                        <option value="Barredura">Barredura</option>
+                                                        <option value="Capacidad Utilizada">Capacidad Utilizada</option>
+                                                        <option value="Cuadro básico">Cuadro Básico</option>
+                                                        <option value="Desperdicios Empaque">Desperdicios Empaques</option>
+                                                        <option value="Desperdicios Totales">Desperdicios Totales</option>
+                                                        <option value="Eficacia">Eficacia</option>
+                                                        <option value="Eficiencia">Eficiencia</option>
+                                                        <option value="IPFM">IPFM</option>
+                                                        <option value="Mantenimiento Completado">Mantenimiento Completado</option>
+                                                        <option value="Peso Producido Peso Pagado">Peso Producido Peso Pagado</option>
+                                                        <option value="Productividad laboral">Productividad Laboral</option>
+                                                        <option value="Quejas A">Quejas A</option>
+                                                        <option value="Quejas B">Quejas B</option>
+                                                        <option value="Quejas C">Quejas C</option>
+                                                        <option value="Quejas Totales">Quejas Totales</option>
+                                                        <option value="Toneladas Producidas">Toneladas Producidas</option>
+                                                        <option value="Valor de la producción">Valor de la produccion</option>
+                                                        <option value="Variación de la orden de la producción">Variación de la orden</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Cargar" class="btn btn-primary" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="Valor" class="control-label"></label>
+                                                    <input asp-for="Valor" class="form-control" />
+                                                    <span asp-validation-for="Valor" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-info collapsed-card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Indicadores por línea</h3>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <!-- /.card-tools -->
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group">
+                                                    <label asp-for="Indicador_pl" class="control-label">Indicador</label>
+                                                    <span asp-validation-for="Indicador_pl" class="text-danger"></span>
+                                                    <select asp-for="Indicador_pl" class="custom-select rounded-0">
+                                                        <option selected="">--Seleccione un indicador--</option>
+                                                        <option value="Capacidad por linea">Capacidad por línea</option>
+                                                        <option value="Eficacia por linea">Eficacia por línea</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Cargar" class="btn btn-primary" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="Valor_pl" class="control-label">Valor</label>
+                                                    <input asp-for="Valor_pl" class="form-control" />
+                                                    <span asp-validation-for="Valor_pl" class="text-danger"></span>
+                                                </div>
+                                                <label for="linea">Línea:</label>
+                                                <select asp-for="linea" id="linea" class="custom-select rounded-0">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function actualizarLineas() {
+        const plantaSelect = document.getElementById("planta");
+        const lineaSelect = document.getElementById("linea");
+
+        // Borrar las opciones existentes en el segundo select
+        lineaSelect.innerHTML = "";
+
+        // Crear un objeto con las ciudades correspondientes a cada país
+        const LineasPorPlanta = {
+            "Toluca": ["BALON", "BUBULUBU 2", "BUBULUBU", "CANASTA", "CHOCORETA", "DUVALIN", "DUVALIN TETRA", "GRANILLO", "KRANKY", "LUNETA", "MONEDA", "MULTICAVEMIL", "PALETON LC", "PALETA PAYASO", "SIMA"],
+            "San Luis Potosí": ["BOSSAR", "BS CHOCOLATE", "BS CONFITADO", "BUBULUBU", "CAJETA GRANEL", "CAJETA PET", "CHICLOSO", "GOMAS", "PALETA PAYASO", "PALETON COR", "PECOSITAS"],
+            "Jalisco": ["BROCHA", "COMBO", "CUPIDO", "DEDO 22", "ELOTE", "EUROMEC C1", "GOMAS", "MALVAVISCO", "MANGO", "MANITA C3", "MANI", "RELLERINDO", "RISANDÍA", "SANDIBROCHA", "TAKIS", "TARRITO"],
+            "Matehuala": ["OBLEA KAULITZ 1", "OBLEA KAULITZ 3", "PALETA", "MACARRON"]
+        };
+
+        // Obtener las ciudades correspondientes al país seleccionado
+        const lineas = LineasPorPlanta[plantaSelect.value];
+
+        // Agregar las opciones al segundo select
+        lineas.forEach(linea => {
+            const option = document.createElement("option");
+            option.value = linea;
+            option.text = linea;
+            lineaSelect.appendChild(option);
+        });
+    }
+</script>
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@

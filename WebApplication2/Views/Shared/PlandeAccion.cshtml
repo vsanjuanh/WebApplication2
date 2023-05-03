@@ -1,0 +1,174 @@
+﻿@model WebApplication2.Models.MixmodelPA
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Plan de Acción </h1> 
+                    <div>
+                        <h4 style="color:red;">                         @ViewData["message"]</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="\Views\Shared\_Layout.cshtml">Home</a></li>
+                        <li class="breadcrumb-item active">Plan de Acción</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">PLAN DE ACCIÓN </h4> 
+                        </div>
+                        <form asp-action="UPlandeAccion" method="post" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group-addon">
+                                            <span class="input-group-addon text-bold">PLANTA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <select asp-for="AccidentesPa.Region">
+                                                <option value="Jalisco">DV</option>
+                                                <option value="San Luis Potosí">RSLP</option>
+                                                <option value="Matehuala">RMTH</option>
+                                                <option value="Toluca">RT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon text-bold">INDICADOR &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                <select asp-for="AccidentesPa.Indicador">
+                                                    <option value="Accidentes">Accidentes</option>
+                                                    <option value="%Bajas PT">Bajas PT</option>
+                                                    <option value="%Barredura">Barredura</option>
+                                                    <option value="Capacidad Utilizada">Capacidad Utilizada</option>
+                                                    <option value="Cuadro Básico">Cuadro Básico</option>
+                                                    <option value="Desperdicios Empaque">Desperdicios Empaques</option>
+                                                    <option value="Desperdicios Totales">Desperdicios Totales</option>
+                                                    <option value="Eficacia">Eficacia</option>
+                                                    <option value="Eficiencia">Eficiencia</option>
+                                                    <option value="%IPFM">%IPFM</option>
+                                                    <option value="Mantenimiento Completado">Mantenimiento Completado</option>
+                                                    <option value="Peso Producido Peso Pagado">Peso Producido Peso Pagado</option>
+                                                    <option value="Productividad Laboral">Productividad Laboral</option>
+                                                    <option value="Quejas A">Quejas A</option>
+                                                    <option value="Quejas B">Quejas B</option>
+                                                    <option value="Quejas C">Quejas C</option>
+                                                    <option value="Quejas Totales">Quejas Totales</option>
+                                                    <option value="Toneladas Producida">Toneladas Producidas</option>
+                                                    <option value="Valor de la produccion">Valor de la produccion</option>
+                                                    <option value="Variación de la orden">Variación de la orden</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon text-bold"> DESCRIPCIÓN </span>
+                                                <input asp-for="AccidentesPa.Descripción" class="form-control"required="required" />
+                                                <span asp-validation-for="AccidentesPa.Descripción" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon text-bold"> FECHA COMPROMISO </span>
+                                                <input class="form-control" type="date" asp-for="AccidentesPa.FechaCompromiso">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon text-bold"> ¿QUIEN? </span>
+                                                <input asp-for="AccidentesPa.Quien" class="form-control" required="required"/>
+                                                <span asp-validation-for="AccidentesPa.Quien" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon text-bold"> PORCENTAJE DE AVANCE </span>
+                                                <input asp-for="AccidentesPa.Avance" class=" form-control" type="number"min="1" max="100" required="required">
+                                                <span asp-validation-for="AccidentesPa.Avance" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon"><b> 1Q </b></span>
+                                                <input asp-for="Q1" class="form-control" required="required"/>
+                                                <span asp-validation-for="Q1" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon"><b> 2Q </b></span>
+                                                <input asp-for="Q2" class="form-control" />
+                                                <span asp-validation-for="Q2" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon"><b> 3Q </b></span>
+                                                <input asp-for="Q3" class="form-control" />
+                                                <span asp-validation-for="Q3" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon"><b> 4Q </b></span>
+                                                <input asp-for="Q4" class="form-control" />
+                                                <span asp-validation-for="Q4" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-addon"><b> 5Q </b></span>
+                                                <input asp-for="Q5" class="form-control" />
+                                                <span asp-validation-for="Q5" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label> FACTOR A MEJORAR </label>
+                                        @*<input asp-for="AccidentesPa.FactorAMejorar" class="form-control" rows="6" />*@
+                                        <textarea asp-for="AccidentesPa.FactorAMejorar" rows="6" class="form-control" required="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

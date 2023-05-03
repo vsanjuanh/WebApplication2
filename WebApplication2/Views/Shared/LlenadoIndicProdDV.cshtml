@@ -1,0 +1,313 @@
+﻿@model WebApplication2.Models.BdIndicadoresPorLineaDV
+@{
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Formularios</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Llenado de indicadores</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <form asp-action="ULlenadoIndicadoresProdDV">
+        <section class="content">
+            <div class="container-fluid">
+                <!-- /.row -->
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card card-green">
+                            <div class="card-header">
+                                <h3 class="card-title">Eficacia Operativa por línea <small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Combo<code></code></label>
+                                            <input asp-for="COMBO.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="COMBO.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Cupido<code></code></label>
+                                            <input asp-for="CUPIDO.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CUPIDO.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Dedo 22<code></code></label>
+                                            <input asp-for="DEDO22.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="DEDO22.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Elote<code></code></label>
+                                            <input asp-for="ELOTE.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="ELOTE.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Euromec C1<code></code></label>
+                                            <input asp-for="EUROMECC1.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="EUROMECC1.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Gomas<code></code></label>
+                                            <input asp-for="GOMAS.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="GOMAS.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Malvavisco<code></code></label>
+                                            <input asp-for="MALVAVISCO.EficaciaPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="MALVAVISCO.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Mango<code></code></label>
+                                            <input asp-for="MANGO.EficaciaPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="MANGO.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Rellerindo<code></code></label>
+                                            <input asp-for="RELLERINDO.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="RELLERINDO.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Risandía<code></code></label>
+                                            <input asp-for="RISANDIA.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="RISANDIA.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Sandibrocha<code></code></label>
+                                            <input asp-for="SANDIBROCHA.EficaciaPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="SANDIBROCHA.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Takis<code></code></label>
+                                            <input asp-for="TAKIS.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="TAKIS.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Tarrito<code></code></label>
+                                            <input asp-for="TARRITO.EficaciaPl" class="form-control"required="required" />
+                                            <span asp-validation-for="TARRITO.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Manita C3<code></code></label>
+                                            <input asp-for="MANITAC3.EficaciaPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="MANITAC3.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Mani<code></code></label>
+                                            <input asp-for="MANI.EficaciaPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="MANI.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Brocha<code></code></label>
+                                        <input asp-for="BROCHA.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="BROCHA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                </div>
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card card-green">
+                            <div class="card-header">
+                                <h3 class="card-title">Capacidad utilizada por línea <small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Combo<code></code></label>
+                                            <input asp-for="CCOMBO.CapacidadPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="CCOMBO.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Cupido<code></code></label>
+                                            <input asp-for="CCUPIDO.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CCUPIDO.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Dedo 22<code></code></label>
+                                            <input asp-for="CDEDO22.CapacidadPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="CDEDO22.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Elote<code></code></label>
+                                            <input asp-for="CELOTE.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CELOTE.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Euromec C1<code></code></label>
+                                            <input asp-for="CEUROMECC1.CapacidadPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="CEUROMECC1.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Gomas<code></code></label>
+                                            <input asp-for="CGOMAS.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CGOMAS.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Malvavisco<code></code></label>
+                                            <input asp-for="CMALVAVISCO.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CMALVAVISCO.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Mango<code></code></label>
+                                            <input asp-for="CMANGO.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CMANGO.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Rellerindo<code></code></label>
+                                            <input asp-for="CRELLERINDO.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CRELLERINDO.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Risandía<code></code></label>
+                                            <input asp-for="CRISANDIA.CapacidadPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="CRISANDIA.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Sandibrocha<code></code></label>
+                                            <input asp-for="CSANDIBROCHA.CapacidadPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="CSANDIBROCHA.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Takis<code></code></label>
+                                            <input asp-for="CTAKIS.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CTAKIS.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Tarrito<code></code></label>
+                                            <input asp-for="CTARRITO.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CTARRITO.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Manita C3<code></code></label>
+                                            <input asp-for="CMANITAC3.CapacidadPl" class="form-control"required="required" />
+                                            <span asp-validation-for="CMANITAC3.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Mani<code></code></label>
+                                            <input asp-for="CMANI.CapacidadPl" class="form-control" required="required"/>
+                                            <span asp-validation-for="CMANI.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Brocha<code></code></label>
+                                        <input asp-for="CBROCHA.CapacidadPl" class="form-control"required="required" />
+                                        <span asp-validation-for="CBROCHA.CapacidadPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+    </form>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

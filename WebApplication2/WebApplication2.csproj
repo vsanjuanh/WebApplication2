@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8c82588b-32ca-44c9-a8ba-ea85329aa43d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.32" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="NPOI" Version="2.6.0" />
+    <PackageReference Include="NPOI.Excel" Version="2.1.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="WebMatrix.WebData" Version="2.0.30506" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ImagCalidad\Calificación de Producto\DV\" />
+    <Folder Include="wwwroot\ImagCalidad\Calificación de Producto\RMTH\" />
+    <Folder Include="wwwroot\ImagCalidad\Calificación de Producto\RSLP\" />
+    <Folder Include="wwwroot\ImagCalidad\Calificación de Producto\RT\" />
+    <Folder Include="wwwroot\ImagCalidad\Rechazos de PT\DV\" />
+    <Folder Include="wwwroot\ImagCalidad\Rechazos de PT\RMTH\" />
+    <Folder Include="wwwroot\ImagCalidad\Rechazos de PT\RSLP\" />
+    <Folder Include="wwwroot\ImagCalidad\Rechazos de PT\RT\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Proceso\DV\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Proceso\RMTH\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Proceso\RSLP\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Proceso\RT\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Peso\DV\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Peso\RMTH\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Peso\RSLP\" />
+    <Folder Include="wwwroot\ImagCalidad\CP y CPK de Peso\RT\" />
+    <Folder Include="wwwroot\ImagProduccion\" />
+    <Folder Include="wwwroot\ImagProduccion\Eficacias Críticas\DV\" />
+    <Folder Include="wwwroot\ImagProduccion\Eficacias Críticas\RMTH\" />
+    <Folder Include="wwwroot\ImagProduccion\Eficacias Críticas\RSLP\" />
+    <Folder Include="wwwroot\ImagProduccion\Eficacias Críticas\RT\" />
+    <Folder Include="wwwroot\ImagProduccion\Variacion de la orden de produccion por linea\RMTH\" />
+    <Folder Include="wwwroot\ImagProduccion\Variacion de la orden de produccion por linea\DV\" />
+    <Folder Include="wwwroot\ImagProduccion\Variacion de la orden de produccion por linea\RSLP\" />
+    <Folder Include="wwwroot\ImagProduccion\Variacion de la orden de produccion por linea\RT\" />
+    <Folder Include="wwwroot\ImagSega\Supervisiones Sistemáticas Sanitarias\DV\" />
+    <Folder Include="wwwroot\ImagSega\Supervisiones Sistemáticas Sanitarias\RMTH\" />
+    <Folder Include="wwwroot\ImagSega\Supervisiones Sistemáticas Sanitarias\RSLP\" />
+    <Folder Include="wwwroot\ImagSega\Supervisiones Sistemáticas Sanitarias\RT\" />
+    <Folder Include="wwwroot\ImagSega\Cumplimiento al programa maestro de limpieza\DV\" />
+    <Folder Include="wwwroot\ImagSega\Cumplimiento al programa maestro de limpieza\RMTH\" />
+    <Folder Include="wwwroot\ImagSega\Cumplimiento al programa maestro de limpieza\RSLP\" />
+    <Folder Include="wwwroot\ImagSega\Cumplimiento al programa maestro de limpieza\RT\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

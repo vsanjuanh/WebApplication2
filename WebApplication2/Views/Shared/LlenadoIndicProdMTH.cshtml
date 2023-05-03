@@ -1,0 +1,133 @@
+﻿@model WebApplication2.Models.BdIndicadoresPorLineaMTH
+@{
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Formularios</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Llenado de indicadores  </li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <form asp-action="ULlenadoIndicadoresProdMTH">
+        <section class="content">
+            <div class="container-fluid">
+                <!-- /.row -->
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card card-green">
+                            <div class="card-header">
+                                <h3 class="card-title">Eficacia Operativa por línea <small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Macarron<code></code></label>
+                                            <input asp-for="MACARRON.EficaciaPl"class="form-control"required="required" />
+                                            <span asp-validation-for="MACARRON.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Oblea Kaulitz 1<code></code></label>
+                                            <input asp-for="OBLEAKAULITZ1.EficaciaPl"class="form-control"required="required" />
+                                            <span asp-validation-for="OBLEAKAULITZ1.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Oblea Kaulitz 3<code></code></label>
+                                            <input asp-for="OBLEAKAULITZ3.EficaciaPl"class="form-control"required="required" />
+                                            <span asp-validation-for="OBLEAKAULITZ3.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Paleta<code></code></label>
+                                            <input asp-for="PALETA.EficaciaPl"class="form-control"required="required" />
+                                            <span asp-validation-for="PALETA.EficaciaPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!--/.col (left) -->
+                </div>
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card card-green">
+                            <div class="card-header">
+                                <h3 class="card-title">Capacidad utilizada por línea <small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Macarron<code></code></label>
+                                            <input asp-for="CMACARRON.CapacidadPl"class="form-control"required="required" />
+                                            <span asp-validation-for="CMACARRON.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Oblea Kaulitz 1<code></code></label>
+                                            <input asp-for="COBLEAKAULITZ1.CapacidadPl"class="form-control"required="required" />
+                                            <span asp-validation-for="COBLEAKAULITZ1.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Oblea Kaulitz 3<code></code></label>
+                                            <input asp-for="COBLEAKAULITZ3.CapacidadPl"class="form-control"required="required" />
+                                            <span asp-validation-for="COBLEAKAULITZ3.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputRounded0">Paleta<code></code></label>
+                                            <input asp-for="CPALETA.CapacidadPl"class="form-control"required="required" />
+                                            <span asp-validation-for="CPALETA.CapacidadPl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+    </form>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

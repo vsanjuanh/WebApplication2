@@ -1,0 +1,241 @@
+﻿@model WebApplication2.Models.Mixmodel
+@{
+}
+<div onpageshow="myFunction()" class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h3>Llenado de indicadores</h3>
+                    <h1 style="color:darkslateblue">@ViewData["message"]</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Llenado de indicadores  </li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <form asp-action="ULlenadoIndicadoresProd" method="post" enctype="multipart/form-data"  >
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        @if (TempData["Succes"] != null)
+                        {
+                            <div class="alert alert-default-success">
+                                @TempData["Succes"]
+                            </div>
+                        }
+                        @if (TempData["Error"] != null)
+                        {
+                            <div class="alert alert-default-danger">
+                                @TempData["Error"]
+                            </div>
+                        }
+                        @*<label>Planta</label>
+        <select asp-for="BDAccidente.Region">
+            <option value="N">Seleccione una opción</option>
+            <option value="Jalisco">DV</option>
+            <option value="Toluca">RT</option>
+            <option value="San Luis Potosi"> RSLP</option>
+            <option value="Matehuala">RMTH</option>
+        </select>*@
+                        <!-- jquery validation -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Producción<small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">TONELADAS PRODUCIDAS</label>
+                                            <input asp-for="BdToneladasProducida.ToneladasProducidas" class="form-control" required="required"/>
+                                            <span asp-validation-for="BdToneladasProducida.ToneladasProducidas" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">VARIACIÓN DE LA ORDEN DE PRODUCCIÓN</label>
+                                            <input asp-for="BdVariaciónDeLaOrden.VariaciónDeLaOrdenDeLaProducción" class="form-control" required="required"/>
+                                            <span asp-validation-for="BdVariaciónDeLaOrden.VariaciónDeLaOrdenDeLaProducción" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">VARIACIÓN DE LA ORDEN DE PRODUCCIÓN POR LINEA</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="filevariacion" class="custom-file-input" id="exampleInputFile"required="required">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">VALOR DE LA PRODUCCIÓN</label>
+                                            <input asp-for="BdValorDeLaProducción.ValorDeLaProducción" class="form-control"required="required" />
+                                            <span asp-validation-for="BdValorDeLaProducción.ValorDeLaProducción" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">EFICACIA(%)</label>
+                                            <input asp-for="BdEficaci.Eficacia" class="form-control" required="required"/>
+                                            <span asp-validation-for="BdEficaci.Eficacia" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">EFICACIAS CRÍTICAS</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="fileeficacias" class="custom-file-input" id="eficacias_"required="required">
+                                                    <label class="custom-file-label" for="eficacias_">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">CAPACIDAD UTILIZADA (%)</label>
+                                            <input asp-for="BdCapUtilizada.CapacidadUtilizada" class="form-control"required="required" />
+                                            <span asp-validation-for="BdCapUtilizada.CapacidadUtilizada" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">CUADRO BÁSICO</label>
+                                            <input asp-for="BDCuadroBásico.CuadroBásico" class="form-control"required="required" />
+                                            <span asp-validation-for="BDCuadroBásico.CuadroBásico" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                PESOS PRODUCIDOS PESOS PAGADOS
+                                            </label>
+                                            <input asp-for="BdPesoProducidoPesoPagado.PesoProducidoPesoPagado" class="form-control" required="required"/>
+                                            <span asp-validation-for="BdPesoProducidoPesoPagado.PesoProducidoPesoPagado" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">PRODUCTIVIDAD LABORAL</label>
+                                            <input asp-for="BdProductividadLaboral.ProductividadLaboral" class="form-control"required="required" />
+                                            <span asp-validation-for="BdProductividadLaboral.ProductividadLaboral" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- jquery validation -->
+                        <div class="card card-danger">
+                            <div class="card-header">
+                                <h3 class="card-title">Desperdicios<small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">DESPERDICIOS PRODUCCIÓN (BAJAS PT) (%)</label>
+                                            <input asp-for="BDBajasPt.BajasPt" class="form-control"required="required" />
+                                            <span asp-validation-for="BDBajasPt.BajasPt" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">% BARREDURA TOTAL</label>
+                                            <input asp-for="BDBarredura.Barredura" class="form-control"required="required" />
+                                            <span asp-validation-for="BDBarredura.Barredura" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">DESPERDICIOS TOTALES (%)</label>
+                                            <input asp-for="BdDesperdiciosTotale.DesperdiciosTotales" class="form-control" required="required"/>
+                                            <span asp-validation-for="BdDesperdiciosTotale.DesperdiciosTotales" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">DESPERDICIOS DE EMPAQUE (%)</label>
+                                            <input asp-for="BdDesperdiciosEmpaque.DesperdiciosEmpaque" class="form-control" required="required"/>
+                                            <span asp-validation-for="BdDesperdiciosEmpaque .DesperdiciosEmpaque" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col (left) -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- /.card -->
+                        <div class="card card-yellow">
+                            <div class="card-header">
+                                <h3 class="card-title">Seguridad<small></small></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Accidentes</label>
+                                                <input asp-for="BDAccidente.NúmeroDeEventos" class="form-control" required="required"/>
+                                                <span asp-validation-for="BDAccidente.NúmeroDeEventos" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <!--/.col (right) -->
+            </div><!-- /.container-fluid -->
+        </section>
+    </form>
+    <!-- /.content -->
+</div>
+<script>
+    function myFunction() {
+        alert("Page is loaded");
+    }
+</script>
+<!-- /.content-wrapper -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

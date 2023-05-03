@@ -1,0 +1,293 @@
+﻿@model WebApplication2.Models.BdIndicadoresPorLineaRT
+@{
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Indicadores por línea</h1>
+                    <h1 style="color:red;">@ViewData["message"]</h1style="color:blue;">
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Llenado de indicadores  </li>
+                        <li class="breadcrumb-item active">Llenado de indicadores RT</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+
+    <section class="content">
+        <form asp-action="ULlenadoIndicadoresProdRT" method="post" enctype="multipart/form-data">
+            <div class="container-fluid">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- jquery validation -->
+                    <div class="card card-green">
+                        <div class="card-header">
+                            <h3 class="card-title">Eficacia Operativa por línea <small></small></h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Balón</label>
+                                        <input asp-for="BALON.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="BALON.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Bubulubu 2<code></code></label>
+                                        <input asp-for="BUBULUBU2.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="BUBULUBU2.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Bubulubu<code></code></label>
+                                        <input asp-for="BUBULUBU.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="BUBULUBU.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Canasta<code></code></label>
+                                        <input asp-for="CANASTA.EficaciaPl" class="form-control" required="required" />
+                                        <span asp-validation-for="CANASTA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Chocoreta<code></code></label>
+                                        <input asp-for="CHOCORETA.EficaciaPl" class="form-control" required="required" />
+                                        <span asp-validation-for="CHOCORETA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Sima<code></code></label>
+                                        <input asp-for="SIMA.EficaciaPl" class="form-control" required="required" />
+                                        <span asp-validation-for="SIMA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Duvalin<code></code></label>
+                                        <input asp-for="DUVALIN.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="DUVALIN.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Duvalin Tetra<code></code></label>
+                                        <input asp-for="DUVALINTETRA.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="DUVALINTETRA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Granillo<code></code></label>
+                                        <input asp-for="GRANILLO.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="GRANILLO.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Kranky<code></code></label>
+                                        <input asp-for="KRANKY.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="KRANKY.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Luneta<code></code></label>
+                                        <input asp-for="LUNETA.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="LUNETA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Moneda<code></code></label>
+                                        <input asp-for="MONEDA.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="MONEDA.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Multicav<code></code></label>
+                                        <input asp-for="MULTICAV.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="MULTICAV.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Paleton LC<code></code></label>
+                                        <input asp-for="PALETONLC.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="PALETONLC.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputRounded0">Paleta Payaso<code></code></label>
+                                        <input asp-for="PALETAPAYASO.EficaciaPl" class="form-control"required="required" />
+                                        <span asp-validation-for="PALETAPAYASO.EficaciaPl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+            </div>
+            <div class="col-md-12">
+                <div class="card card-green">
+                    <div class="card-header">
+                        <h3 class="card-title">Capacidad utilizada por línea <small></small></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label">Balón</label>
+                                    <input asp-for="CBALON.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CBALON.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Bubulubu 2<code></code></label>
+                                    <input asp-for="CBUBULUBU2.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CBUBULUBU2.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Bubulubu<code></code></label>
+                                    <input asp-for="CBUBULUBU.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CBUBULUBU.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Canasta<code></code></label>
+                                    <input asp-for="CCANASTA.CapacidadPl" class="form-control" required="required" />
+                                    <span asp-validation-for="CCANASTA.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Chocoreta<code></code></label>
+                                    <input asp-for="CCHOCORETA.CapacidadPl" class="form-control" required="required" />
+                                    <span asp-validation-for="CCHOCORETA.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Sima<code></code></label>
+                                    <input asp-for="CSIMA.CapacidadPl" class="form-control" required="required" />
+                                    <span asp-validation-for="CSIMA.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Duvalin<code></code></label>
+                                    <input asp-for="CDUVALIN.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CDUVALIN.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Duvalin Tetra<code></code></label>
+                                    <input asp-for="CDUVALINTETRA.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CDUVALINTETRA.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Granillo<code></code></label>
+                                    <input asp-for="CGRANILLO.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CGRANILLO.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Kranky<code></code></label>
+                                    <input asp-for="CKRANKY.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CKRANKY.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Luneta<code></code></label>
+                                    <input asp-for="CLUNETA.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CLUNETA.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Moneda<code></code></label>
+                                    <input asp-for="CMONEDA.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CMONEDA.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Multicav<code></code></label>
+                                    <input asp-for="CMULTICAV.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CMULTICAV.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Paleton LC<code></code></label>
+                                    <input asp-for="CPALETONLC.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CPALETONLC.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleInputRounded0">Paleta Payaso<code></code></label>
+                                    <input asp-for="CPALETAPAYASO.CapacidadPl" class="form-control"required="required" />
+                                    <span asp-validation-for="CPALETAPAYASO.CapacidadPl" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" value="Guardar" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

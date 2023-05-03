@@ -1,0 +1,330 @@
+﻿@model WebApplication2.Models.DescargaReporte
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Reporte</h1>
+                    <ul id="lista-checkbox"></ul>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Descargar Reporte</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <form asp-action="DescargarBD" method="post" enctype="multipart/form-data" id="myform" onsubmit="return validate()">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- jquery validation -->
+                    <div class="row">
+                        <!-- /.row -->
+                        <div class="col-md-6">
+                            <div class="card card-info collapsed-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Producción</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- /.card-tools -->
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <!-- checkbox -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[0]" class="custom-control-input" type="checkbox" id="customCheckbox1" value="Toneladas Producidas">
+                                                    <label for="customCheckbox1" class="custom-control-label">Toneladas Producidas</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[1]" class="custom-control-input" type="checkbox" id="customCheckbox2" value="Productividad Laboral">
+                                                    <label for="customCheckbox2" class="custom-control-label">Productividad Laboral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[2]" class="custom-control-input" type="checkbox" id="customCheckbox3" value="Variación de la orden de la producción">
+                                                    <label for="customCheckbox3" class="custom-control-label">Variación de la orden de la producción</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[3]" class="custom-control-input" type="checkbox" id="customCheckbox4" value="Capacidad Utilizada">
+                                                    <label for="customCheckbox4" class="custom-control-label">Capacidad Utilizada</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[4]" class="custom-control-input" type="checkbox" id="customCheckbox5" value="Peso producido Peso pagado">
+                                                    <label for="customCheckbox5" class="custom-control-label">Peso producido Peso pagado</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[5]" class="custom-control-input" type="checkbox" id="customCheckbox6" value="Variación de la orden de la producción">
+                                                    <label for="customCheckbox6" class="custom-control-label">Variación de la orden de la producción</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[6]" class="custom-control-input" type="checkbox" id="customCheckbox7" value="Eficacia">
+                                                    <label for="customCheckbox7" class="custom-control-label">Eficacia</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[7]" class="custom-control-input" type="checkbox" id="customCheckbox8" value="Cuadro básico">
+                                                    <label for="customCheckbox8" class="custom-control-label">Cuadro básico</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[8]" class="custom-control-input" type="checkbox" id="customCheckbox9" value="%Bajas PT">
+                                                    <label for="customCheckbox9" class="custom-control-label">%Bajas PT</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[9]" class="custom-control-input" type="checkbox" id="customCheckbox10" value="Desperdicios Totales">
+                                                    <label for="customCheckbox10" class="custom-control-label">Desperdicios Totales</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[10]" class="custom-control-input" type="checkbox" id="customCheckbox11" value="Desperdicios Empaque">
+                                                    <label for="customCheckbox11" class="custom-control-label">Desperdicios Empaque</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[11]" class="custom-control-input" type="checkbox" id="customCheckbox12" value="%Barredura">
+                                                    <label for="customCheckbox12" class="custom-control-label">%Barredura</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input asp-for="Indicador[12]" class="custom-control-input" type="checkbox" id="customCheckbox13" value="Accidentes">
+                                                    <label for="customCheckbox13" class="custom-control-label">Accidentes</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-success collapsed-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Calidad</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- /.card-tools -->
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="Indicador[13]" class="custom-control-input" type="checkbox" id="customCheckbox14" value="Quejas A">
+                                        <label for="customCheckbox14" class="custom-control-label">Quejas A</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="Indicador[14]" class="custom-control-input" type="checkbox" id="customCheckbox15" value="Quejas B">
+                                        <label for="customCheckbox15" class="custom-control-label">Quejas B</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="Indicador[15]" class="custom-control-input" type="checkbox" id="customCheckbox16" value="Quejas C">
+                                        <label for="customCheckbox16" class="custom-control-label">Quejas C</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="Indicador[16]" class="custom-control-input" type="checkbox" id="customCheckbox17" value="Quejas Totales">
+                                        <label for="customCheckbox17" class="custom-control-label">Quejas Totales</label>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card card-danger collapsed-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Mantenimiento</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- /.card-tools -->
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="Indicador[17]" class="custom-control-input" type="checkbox" id="customCheckbox18" value="%IPFM">
+                                        <label for="customCheckbox18" class="custom-control-label">IPFM</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="Indicador[18]" class="custom-control-input" type="checkbox" id="customCheckbox19" value="Mantenimiento Completado">
+                                        <label for="customCheckbox19" class="custom-control-label">Mantenimiento Completado</label>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Planta</h3>
+                                    <div class="card-tools">
+                                    </div>
+                                    <!-- /.card-tools -->
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="custom-control custom-checkbox">
+                                                <input asp-for="Region[0]" class="custom-control-input custom-control-input-danger" type="checkbox" id="customCheckbox20" value="Jalisco">
+                                                <label for="customCheckbox20" class="custom-control-label">DV</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input asp-for="Region[1]" class="custom-control-input custom-control-input-danger" type="checkbox" id="customCheckbox21" value="Toluca">
+                                                <label for="customCheckbox21" class="custom-control-label">RT</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="custom-control custom-checkbox">
+                                                <input asp-for="Region[2]" class="custom-control-input custom-control-input-danger" type="checkbox" id="customCheckbox22" value="San Luis Potosí">
+                                                <label for="customCheckbox22" class="custom-control-label">RSLP</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input asp-for="Region[3]" class="custom-control-input custom-control-input-danger" type="checkbox" id="customCheckbox23" value="Matehuala">
+                                                <label for="customCheckbox23" class="custom-control-label">RMTH</label>
+                                            </div>
+                                        </div>
+                                        <span class="text-danger" id="error-message" style="display: none;">Seleccione al menos una opción</span>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-8">
+                            <!-- small card -->
+                            <div class="small-box bg-orange">
+                                <div>
+                                    <button type="submit" class="btn btn-block bg-orange btn-lg">
+                                        <i class="fas fa-download"></i>
+                                        Descargar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                </div>
+            </form>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<script>
+    function validate() {
+        var valid = false;
+
+        if (document.getElementById("customCheckbox1").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox2").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox3").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox4").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox6").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox7").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox8").checked) {
+            alid = true;
+        }
+        else if (document.getElementById("customCheckbox9").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox10").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox11").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox12").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox13").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox14").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox15").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox16").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox17").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox18").checked) {
+            valid = true;
+        }
+        else if (document.getElementById("customCheckbox19").checked) {
+            valid = true;
+        }
+        if (valid) {
+            var valid1 = false;
+
+            if (document.getElementById("customCheckbox20").checked) {
+                valid1 = true;
+            }
+            else if (document.getElementById("customCheckbox21").checked) {
+                valid1 = true;
+            }
+            else if (document.getElementById("customCheckbox22").checked) {
+                valid1 = true;
+            }
+            else if (document.getElementById("customCheckbox23").checked) {
+                valid1 = true;
+            }
+                if (valid1) {
+                }
+                else {
+                    window.alert("Por favor seleccione al menos una planta")
+                    return false;
+                }
+        }
+        else {
+            alert("Por favor seleccione al menos un indicador")
+            return false;
+        }
+    }
+
+</script>
+
+
+
+<!-- /.content-wrapper -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

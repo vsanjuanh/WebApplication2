@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ASPNETCore31WithAdminLT</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/WebApplication2/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/WebApplication2/dist/css/adminlte.min.css">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <partial name="_Sidebar" />
+    <partial name="_Navbar" />
+    @RenderBody()
+    <partial name="_Footer" />
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="~/WebApplication2/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/WebApplication2/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/WebApplication2/dist/js/adminlte.min.js"></script>
+    <!-- jQuery -->
+    <script src="~/WebApplication2/plugins/jquery/jquery.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="~/WebApplication2/plugins/jszip/jszip.min.js"></script>
+    <script src="~/WebApplication2/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="~/WebApplication2/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="~/WebApplication2/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/WebApplication2/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/WebApplication2/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/adminlte/dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+

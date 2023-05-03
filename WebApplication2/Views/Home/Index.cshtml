@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model WebApplication2.Models.BdAccidente
+    <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>WELCOME</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Llenado de indicadores</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- Small Box (Stat card) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-8">
+                            <!-- small card -->
+                            <a href="@Url.ActionLink("ULlenadoIndicadores","User")" class="small-box bg-cyan">
+                                <div class="inner">
+                                    <h4>Llenado de indicadores</h4>
+                                    <p>-------</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-8">
+                            <!-- small card -->
+                            <a href="@Url.ActionLink("UPlandeAccion","BdAccidentes")" class="small-box bg-green">
+                                <div class="inner">
+                                    <h4>Plan de Acción</h4>
+                                    <p>-------</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-8">
+                            <a href="@Url.ActionLink("UDescargaExcel","User")" class="small-box bg-orange">
+                                <div class="inner">
+                                    <h4>Descargar Reporte</h4>
+                                    <p>-------</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-8">
+                            <a href="@Url.ActionLink("Index","autenticacion")" class="small-box bg-red">
+                                <div class="inner">
+                                    <h4>Usuarios</h4>
+                                    <p>-------</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-8">
+                            <a href="@Url.ActionLink("Edit","BdList")" class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h4>Modificar Datos</h4>
+                                    <p>-------</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-eraser"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+

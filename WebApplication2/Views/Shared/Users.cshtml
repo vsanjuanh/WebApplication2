@@ -1,0 +1,112 @@
+﻿@model IEnumerable<WebApplication2.Models.Users>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            @if (TempData["Succes"] != null)
+            {
+                <div class="alert alert-default-success">
+                    @TempData["Succes"]
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-default-danger">
+                    @TempData["Error"]
+                </div>
+            }
+
+            <h1>Usuarios</h1>
+            <hr />
+            <p>
+                <a asp-action="Create">Agregar Usuario</a>
+            </p>
+        </div>
+    </div>
+    <div class="content-header">
+        <div class="container-fluid">
+            <form method="get">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="row">
+                                    <input class="form-control form-control-md" placeholder="Buscar por Nombre" type="text" id="Nombre" name="SearchString1" value="@ViewBag.CurrentFilter1">
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </div>
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Usuario)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Clave)
+                            </th>
+                            <th>
+                                <div class="row">
+                                    <select class="custom-select" id="cars" name="searchString2" value="@ViewBag.CurrentFilter2">
+                                        <option value="">Seleccione un Rol</option>
+                                        <option value="1">Administrador</option>
+                                        <option value="2">Capturista</option>
+                                        <option value="3">Produccion</option>
+                                        <option value="4">Mantenimiento</option>
+                                        <option value="5">Calidad</option>
+                                        <option value="6">SEGA</option>
+                                    </select>
+                                    @Html.DisplayNameFor(model => model.IdRol)
+                                </div>
+                            </th>
+                            <th>
+                                <div class="row">
+                                    <select class="custom-select" id="cars" name="searchString" value="@ViewBag.CurrentFilter">
+                                        <option value="">Seleccione una Planta</option>
+                                        <option value="Toluca">RT</option>
+                                        <option value="San Luis Potosí">RSLP</option>
+                                        <option value="Matehuala">RMTH</option>
+                                        <option value="Jalisco">DV</option>
+                                    </select>
+                                    @Html.DisplayNameFor(model => model.Region)
+                                </div>
+                            </th>
+                            <th>
+                                <div class="row">
+                                    @*<input type="submit" value="Buscar" />*@
+                                    <button type="submit" class="btn btn-block btn-primary btn-sm">Buscar</button>
+                                    Edit / Delete
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Usuario)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Clave)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IdRol)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Region)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
